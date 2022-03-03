@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Page 1</h1>
+    <a href="test.html">test</a>
+    <br />
+    <a href="index.html">index</a>
+    <script>
+      // to get all the params -
+
+      //   let params = {}
+      //   window.location.search
+      //     .slice(1)
+      //     .split('&')
+      //     .forEach((elm) => {
+      //       if (elm === '') return
+      //       let spl = elm.split('=')
+
+      //       console.log(elm, spl)
+      //       const d = decodeURIComponent
+      //       params[d(spl[0])] = spl.length >= 2 ? d(spl[1]) : true
+      //     })
+
+      // replace a params from all the links in the page -
+
+      //   let currentUrl = window.location.href
+      //   var captured = /test=([^&]+)/.exec(currentUrl)[1]
+      //   var result = captured ? captured : 'myDefaultValue'
+      //   var urls = []
+      //   for (var i = document.links.length; i-- > 0; )
+      //     if (document.links[i].hostname === location.hostname) {
+      //       let url = new URL(document.links[i].href)
+      //       url.searchParams.append('test', result)
+      //       document.links[i].href = url
+      //     }
+    </script>
+  </body>
+</html>
