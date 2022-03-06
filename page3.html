@@ -7,15 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Page 2</h1>
-    <a href="index.html">index from 2</a>
-    <a href="test.html">page 1</a>
+    <h1>Page 3</h1>
+    <a href="page1.html">Page 1</a>
+    <br />
+    <a href="page2.html">Page 2</a>
     <script>
       window.location.search
         .slice(1)
         .split('&')
         .forEach((elm) => {
-          if (elm === '' || elm.split('=')[0] == 'utm_source') return
+          let capturedParam = elm.split('=')[0]
+          if (elm === '' || capturedParam.includes('utm_')) return
           let spl = elm.split('=')
           for (var i = document.links.length; i-- > 0; )
             if (document.links[i].hostname === location.hostname) {

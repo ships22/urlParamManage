@@ -7,10 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Page 1</h1>
-    <a href="test.html">test</a>
+    <h1>Page 2</h1>
+    <a href="page3.html">Page 3</a>
     <br />
-    <a href="index.html">index</a>
+    <a href="page1.html">Page 1</a>
     <script>
       // to get all the params -
 
@@ -39,6 +39,23 @@
       //       url.searchParams.append('test', result)
       //       document.links[i].href = url
       //     }
+    </script>
+
+    <script>
+      window.location.search
+        .slice(1)
+        .split('&')
+        .forEach((elm) => {
+          let capturedParam = elm.split('=')[0]
+          if (elm === '' || capturedParam.includes('utm_')) return
+          let spl = elm.split('=')
+          for (var i = document.links.length; i-- > 0; )
+            if (document.links[i].hostname === location.hostname) {
+              let url = new URL(document.links[i].href)
+              url.searchParams.append(elm.split('=')[0], elm.split('=')[1])
+              document.links[i].href = url
+            }
+        })
     </script>
   </body>
 </html>
